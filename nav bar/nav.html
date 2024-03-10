@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modified Navigation Bar</title>
+    <style>
+        /* Styles for the article tag component */
+        article {
+            position: fixed;
+            margin-left: 10px;
+        }
+
+        /* Styles for the navlist */
+        #navlist {
+            background-color: #4CAF50; /* Modified color */
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -60px;
+            width: auto;
+            display: block;
+            transition: top 0.3s;
+        }
+
+        /* Styles for the navlist anchor element */
+        #navlist a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Hover effect of navlist anchor element */
+        #navlist a:hover {
+            background-color: #45a049; /* Modified hover color */
+            color: white;
+        }
+
+        /* Additional styling for the article content */
+        article p {
+            color: #333; /* Modified text color */
+            font-size: 16px; /* Modified font size */
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo with tag -->
+    <article>
+        <h1 style="color: #2E86C1;">My Website</h1>
+        <b>Your Slogan Here</b>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
+    </article>
+
+    <!-- Navbar items -->
+    <div id="navlist">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- For creating scroll -->
+    <div class="scrollable" style="padding: 15px 15px 4500px;"></div>
+
+    <script>
+        // When the user scrolls down then
+        // slide down the navbar
+        window.onscroll = function () {
+            scroll()
+        };
+
+        function scroll() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("navlist").style.top = "0";
+            } else {
+                document.getElementById("navlist").style.top = "-60px";
+            }
+        }
+    </script>
+</body>
+
+</html>
